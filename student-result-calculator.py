@@ -1,26 +1,14 @@
-name=input("enter your name: ")
-roll=int(input("enter your roll no: "))
-n=int(input("enter the number of subjects: "))
-total=0
-marks=[]
-for i in range (1,n+1):
-    num=int(input(f"enter the marks of sub{i}: "))
-    marks.append(num)
-    total+=num
-
-percent=(total/(n*100))*100
-avg=total/n
 def grade (percent):
     if percent>90 and percent<=100:
-        return "grade A"
+        return "A"
     elif percent>80 and percent<=90:
-        return "grade B"
+        return "B"
     elif percent>70 and percent<=80:
-        return "grade C"
+        return "C"
     elif percent>60 and percent<=70:
-        return "grade D"
+        return "D"
     elif percent>50 and percent<=60:
-        return "grade E"
+        return "E"
     elif percent>100:
         return "error"
     else:
@@ -33,15 +21,29 @@ def highest_marks (mark):
             highest=num
     return highest
 
+name=input("enter your name: ")
+roll=int(input("enter your roll no: "))
+n=int(input("enter the number of subjects: "))
+total=0
+marks=[]
+for i in range (1,n+1):
+    num=int(input(f"enter the marks of sub{i}: "))
+    marks.append(num)
+    total+=num
 
-
-print("RESULT:-")
-print("name: ",name)
-print("roll no: ",roll)
-print("total marks: ",total)
-print(f"percentage: {percent:.2f}%")
-print("average: ",avg)
+percent=(total/(n*100))*100
+avg=total/n
+print("="*35)
+print("   RESULT:-")
+print("="*35)
+print(f"{'name':15}: {name}")
+print(f"{'roll no':15}: {roll}")
+print(f"{'total marks':15}: {total}")
+print(f"{'percentage':15}: {percent:.2f}%")
+print(f"{'average':15}: {avg}")
 student_grades=grade(percent)
-print(student_grades)
+print(f"{'grade':15}: {student_grades}")
 high=highest_marks(marks)
-print("highest marks among sub is: ",high)
+print(f"{'highest marks':15}: {high}")
+print(f"{'lowest marks':15} {min(marks)}")
+print("="*35)
