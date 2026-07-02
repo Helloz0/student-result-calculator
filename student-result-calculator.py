@@ -15,14 +15,14 @@ def grade (percent):
         return "failed"
 
 def highest_marks (mark):    
-    highest=0
+    highest=mark[0]
     for num in mark:
         if num>highest:
             highest=num
     return highest
 
 name=input("enter your name: ")
-roll=int(input("enter your roll no: "))
+roll=input("enter your roll no: ")
 n=int(input("enter the number of subjects: "))
 total=0
 marks=[]
@@ -34,13 +34,13 @@ for i in range (1,n+1):
 percent=(total/(n*100))*100
 avg=total/n
 print("="*35)
-print("   RESULT:-")
+print("       RESULT:-")
 print("="*35)
 print(f"{'name':15}: {name}")
 print(f"{'roll no':15}: {roll}")
 print(f"{'total marks':15}: {total}")
 print(f"{'percentage':15}: {percent:.2f}%")
-print(f"{'average':15}: {avg}")
+print(f"{'average':15}: {avg:.2f}")
 student_grades=grade(percent)
 print(f"{'grade':15}: {student_grades}")
 high=highest_marks(marks)
