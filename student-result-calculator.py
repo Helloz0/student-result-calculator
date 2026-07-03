@@ -1,15 +1,16 @@
-def grade (percent):
-    if percent>90 and percent<=100:
+
+def grade(percent):
+    if 90 < percent <= 100:
         return "A"
-    elif percent>80 and percent<=90:
+    elif 80 < percent <= 90:
         return "B"
-    elif percent>70 and percent<=80:
+    elif 70 < percent <= 80:
         return "C"
-    elif percent>60 and percent<=70:
+    elif 60 < percent <= 70:
         return "D"
-    elif percent>50 and percent<=60:
+    elif 50 < percent <= 60:
         return "E"
-    elif percent>100:
+    elif percent > 100:
         return "error"
     else:
         return "failed"
