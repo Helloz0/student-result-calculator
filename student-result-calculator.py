@@ -25,10 +25,14 @@ def highest_marks (mark):
 name=input("enter your name: ")
 roll=input("enter your roll no: ")
 n=int(input("enter the number of subjects: "))
+
 total=0
 marks=[]
 for i in range (1,n+1):
     num=int(input(f"enter the marks of sub{i}: "))
+    if num>100:
+        print("invalid input")
+        exit()
     marks.append(num)
     total+=num
 
