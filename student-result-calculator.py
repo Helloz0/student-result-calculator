@@ -29,10 +29,14 @@ n=int(input("enter the number of subjects: "))
 total=0
 marks=[]
 for i in range (1,n+1):
-    num=int(input(f"enter the marks of sub{i}: "))
-    if num>100:
-        print("invalid input")
-        exit()
+    while True:
+        num = int(input(f"enter the marks of sub{i}: "))
+
+        if 0 <= num <= 100:
+            break
+
+        print("Invalid input! Marks should be between 0 and 100.")
+
     marks.append(num)
     total+=num
 
@@ -51,4 +55,4 @@ print(f"{'grade':15}: {student_grades}")
 high=highest_marks(marks)
 print(f"{'highest marks':15}: {high}")
 print(f"{'lowest marks':15} {min(marks)}")
-print("="*35)
+print("="*35) 
