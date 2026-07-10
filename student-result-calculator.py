@@ -21,7 +21,7 @@ def highest_marks (mark):
             highest=num
     return highest
 
-def display (name,roll,total,percent,avg,student_grades,high):
+def display (name,roll,total,percent,avg,student_grades,high,marks):
     print("="*35)
     print("       RESULT:-")
     print("="*35)
@@ -36,6 +36,11 @@ def display (name,roll,total,percent,avg,student_grades,high):
     print(f"{'lowest marks':15} {min(marks)}")
     print("="*35) 
 
+def display_marks (marks,subjects,n):
+    print("="*35)
+    for i in range (n) :
+        print(f"marks in {subjects[i]} :{marks[i]} ")
+    print("="*35)
 
 name=input("enter your name: ")
 roll=input("enter your roll no: ")
@@ -64,8 +69,18 @@ percent=(total/(n*100))*100
 avg=total/n
 student_grades=grade(percent)
 high=highest_marks(marks)
-display(name,roll,total,percent,avg,student_grades,high)
+#display(name,roll,total,percent,avg,student_grades,high)
+print("1. display result ")
+print("2. display highest marks")
+print("3. display marks of each sub")
+choise=int(input("enter no of your choise: "))
+match choise:
+    case 1 :
+        display(name,roll,total,percent,avg,student_grades,high,marks)
+    case 2:
+        print(f"{'highest marks':15}: {high}")
+    case 3:
+        display_marks(marks,subjects,n)
+    case _:
+        print("no correct choise! ")
 
-
-for i in range (n) :
-    print(f"marks is {subjects[i]} :{marks[i]} ")
