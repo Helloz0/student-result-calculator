@@ -1,4 +1,3 @@
-
 def grade(percent):
     if 90 < percent <= 100:
         return "A"
@@ -22,6 +21,22 @@ def highest_marks (mark):
             highest=num
     return highest
 
+def display (name,roll,total,percent,avg,student_grades,high):
+    print("="*35)
+    print("       RESULT:-")
+    print("="*35)
+    print(f"{'name':15}: {name}")
+    print(f"{'roll no':15}: {roll}")
+    print(f"{'total marks':15}: {total}")
+    print(f"{'percentage':15}: {percent:.2f}%")
+    print(f"{'average':15}: {avg:.2f}")
+    
+    print(f"{'grade':15}: {student_grades}")
+    print(f"{'highest marks':15}: {high}")
+    print(f"{'lowest marks':15} {min(marks)}")
+    print("="*35) 
+
+
 name=input("enter your name: ")
 roll=input("enter your roll no: ")
 n=int(input("enter the number of subjects: "))
@@ -42,17 +57,6 @@ for i in range (1,n+1):
 
 percent=(total/(n*100))*100
 avg=total/n
-print("="*35)
-print("       RESULT:-")
-print("="*35)
-print(f"{'name':15}: {name}")
-print(f"{'roll no':15}: {roll}")
-print(f"{'total marks':15}: {total}")
-print(f"{'percentage':15}: {percent:.2f}%")
-print(f"{'average':15}: {avg:.2f}")
 student_grades=grade(percent)
-print(f"{'grade':15}: {student_grades}")
 high=highest_marks(marks)
-print(f"{'highest marks':15}: {high}")
-print(f"{'lowest marks':15} {min(marks)}")
-print("="*35) 
+display(name,roll,total,percent,avg,student_grades,high)
