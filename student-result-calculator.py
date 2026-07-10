@@ -40,6 +40,11 @@ def display (name,roll,total,percent,avg,student_grades,high):
 name=input("enter your name: ")
 roll=input("enter your roll no: ")
 n=int(input("enter the number of subjects: "))
+subjects = []
+
+for i in range(n):
+    subject = input(f"Enter the name of subject {i+1}: ")
+    subjects.append(subject)
 
 total=0
 marks=[]
@@ -60,3 +65,7 @@ avg=total/n
 student_grades=grade(percent)
 high=highest_marks(marks)
 display(name,roll,total,percent,avg,student_grades,high)
+
+
+for i in range (n) :
+    print(f"marks is {subjects[i]} :{marks[i]} ")
