@@ -73,14 +73,27 @@ high=highest_marks(marks)
 print("1. display result ")
 print("2. display highest marks")
 print("3. display marks of each sub")
-choise=int(input("enter no of your choise: "))
-match choise:
-    case 1 :
+print("4. to log out")
+
+
+while True :
+    choice=int(input("enter no of your choice: "))
+    if choice==1:
         display(name,roll,total,percent,avg,student_grades,high,marks)
-    case 2:
+    elif choice==2:
         print(f"{'highest marks':15}: {high}")
-    case 3:
+    elif choice==3:
         display_marks(marks,subjects,n)
-    case _:
-        print("no correct choise! ")
+    elif choice==4:
+        break 
+    else:
+        print("no correct choice! ")
+        
+
+
+
+
+
+
+        
 
