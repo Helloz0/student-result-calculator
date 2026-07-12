@@ -19,7 +19,14 @@ def highest_marks (mark):
     for num in mark:
         if num>highest:
             highest=num
+    
     return highest
+
+def display_highest_lowest (high,marks):
+    print(f"{'highest marks':15}: {high}")
+    print(f"{'lowest marks':15} {min(marks)}")
+
+
 
 def display (name,roll,total,percent,avg,student_grades,high,marks):
     print("="*35)
@@ -69,11 +76,13 @@ percent=(total/(n*100))*100
 avg=total/n
 student_grades=grade(percent)
 high=highest_marks(marks)
+
 #display(name,roll,total,percent,avg,student_grades,high)
 print("1. display result ")
 print("2. display highest marks")
 print("3. display marks of each sub")
-print("4. to log out")
+print("4. display the highest and lowest marks ")
+print("5. log out")
 
 
 while True :
@@ -85,6 +94,8 @@ while True :
     elif choice==3:
         display_marks(marks,subjects,n)
     elif choice==4:
+        display_highest_lowest(high,marks)
+    elif choice==5:
         break 
     else:
         print("no correct choice! ")
