@@ -1,18 +1,18 @@
 def grade(percent):
-    if 90 < percent <= 100:
+    if percent > 100:
+        return "Error"
+    elif percent >= 90:
         return "A"
-    elif 80 < percent <= 90:
+    elif percent >= 80:
         return "B"
-    elif 70 < percent <= 80:
+    elif percent >= 70:
         return "C"
-    elif 60 < percent <= 70:
+    elif percent >= 60:
         return "D"
-    elif 50 < percent <= 60:
+    elif percent >= 50:
         return "E"
-    elif percent > 100:
-        return "error"
     else:
-        return "failed"
+        return "Failed"
 
 def highest_marks (mark):    
     highest=mark[0]
@@ -25,7 +25,6 @@ def highest_marks (mark):
 def display_highest_lowest (high,marks):
     print(f"{'highest marks':15}: {high}")
     print(f"{'lowest marks':15} {min(marks)}")
-
 
 
 def display (name,roll,total,percent,avg,student_grades,high,marks):
@@ -99,12 +98,3 @@ while True :
         break 
     else:
         print("no correct choice! ")
-        
-
-
-
-
-
-
-        
-
