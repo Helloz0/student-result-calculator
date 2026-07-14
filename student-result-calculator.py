@@ -61,7 +61,7 @@ total=0
 marks=[]
 for i in range (1,n+1):
     while True:
-        num = int(input(f"enter the marks of sub{i}: "))
+        num = int(input(f"Enter marks of {subjects[i]}: "))
 
         if 0 <= num <= 100:
             break
