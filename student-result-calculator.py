@@ -59,9 +59,13 @@ for i in range(n):
 
 total=0
 marks=[]
-for i in range (1,n+1):
+for i in range (n):
     while True:
-        num = int(input(f"Enter marks of {subjects[i]}: "))
+        try:
+            num = int(input(f"Enter marks of {subjects[i]}: "))
+        except ValueError:
+            print("Please enter a valid number.")
+            continue
 
         if 0 <= num <= 100:
             break
