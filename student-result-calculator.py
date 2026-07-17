@@ -14,7 +14,7 @@ def grade(percent):
     else:
         return "Failed"
 
-def highest_marks (mark):    
+def highest_marks (mark):
     highest=mark[0]
     for num in mark:
         if num>highest:
@@ -22,12 +22,20 @@ def highest_marks (mark):
     
     return highest
 
+def lowest_marks(mark):
+    lowest = mark[0]
+    for num in mark:
+        if num < lowest:
+            lowest = num
+
+    return lowest
+
 def display_highest_lowest (high,marks):
     print(f"{'highest marks':15}: {high}")
-    print(f"{'lowest marks':15} {min(marks)}")
+    print(f"{'lowest marks':15} {low}")
 
 
-def display (name,roll,total,percent,avg,student_grades,high,marks):
+def display (name,roll,total,percent,avg,student_grades,high,low,marks):
     print("="*35)
     print("       RESULT:-")
     print("="*35)
@@ -39,7 +47,7 @@ def display (name,roll,total,percent,avg,student_grades,high,marks):
     
     print(f"{'grade':15}: {student_grades}")
     print(f"{'highest marks':15}: {high}")
-    print(f"{'lowest marks':15} {min(marks)}")
+    print(f"{'lowest marks':15} {low}")
     print("="*35) 
 
 def display_marks (marks,subjects,n):
@@ -79,7 +87,7 @@ percent=(total/(n*100))*100
 avg=total/n
 student_grades=grade(percent)
 high=highest_marks(marks)
-
+low=lowest_marks(marks)
 #display(name,roll,total,percent,avg,student_grades,high)
 print("1. display result ")
 print("2. display highest marks")
