@@ -32,7 +32,7 @@ def lowest_marks(mark):
 
 def display_highest_lowest (high,marks):
     print(f"{'highest marks':15}: {high}")
-    print(f"{'lowest marks':15} {low}")
+    print(f"{'lowest marks':15}: {low}")
 
 
 def display (name,roll,total,percent,avg,student_grades,high,low,marks):
