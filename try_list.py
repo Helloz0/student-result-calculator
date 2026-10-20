@@ -16,3 +16,12 @@ def highest_marks (mark):
     return highest
 high=highest_marks(marks)
 print("highest marks among sub is: ",high)
+
+def lowest_marks(mark):
+    lowest = mark[0]
+    for num in mark:
+        if num < lowest:
+            lowest = num
+
+    return lowest
+print("lowest marks:",lowest_marks)
